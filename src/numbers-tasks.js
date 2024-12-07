@@ -575,10 +575,10 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  const newN = x1 + x2 + x3;
+  return newN.toFixed(1);
 }
-
 /**
  * Returns the largest number.
  *
@@ -591,8 +591,8 @@ function getSumOfNumbers(/* x1, x2, x3 */) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -607,20 +607,10 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
-  /*   const length = max - min;
-  let newMin = min;
-  console.log(length);
-  const arrN = [];
-  for (let i = 0; i <= length; i + 1) {
-    console.log(i);
-    arrN.push(min);
-    newMin += newMin;
-  }
-  return arrN; */
+function getRandomInteger(min, max) {
+  const length = max - min;
+  return Math.floor(Math.random() * (length + 1) + min);
 }
-// console.log(getRandomInteger(-1, 1));
 /**
  * Returns the length of the hypotenuse of a right triangle.
  *
@@ -632,9 +622,13 @@ function getRandomInteger(/* min, max */) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  throw new Error('Not implemented');
+  const maxNum2 = Number.MAX_VALUE;
+  const hep = Math.hypot(a, b);
+  if (hep === Infinity) {
+    return maxNum2;
+  }
+  return hep;
 }
-
 /**
  * Returns count of odd numbers from zero to the resulting number.
  * The resulting number is taken into account.
@@ -648,10 +642,15 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  let nNum3 = 0;
+  for (let i = 0; i <= Math.abs(number); i += 1) {
+    if (i % 2 === 1) {
+      nNum3 += 1;
+    }
+  }
+  return nNum3;
 }
-
 module.exports = {
   getRectangleArea,
   getCircleCircumference,
