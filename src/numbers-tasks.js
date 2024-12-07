@@ -503,8 +503,8 @@ function getIntegerOnString(str, base) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
+function isSafeInteger(number) {
+  return Number.isSafeInteger(number);
 }
 
 /**
@@ -517,10 +517,9 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
 }
-
 /**
  * Returns the largest integer greater than or equal to a given number.
  *
@@ -531,10 +530,9 @@ function roundToSmallestInteger(/* number */) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
 }
-
 /**
  * Returns the value of a number rounded to the nearest integer.
  *
@@ -546,8 +544,8 @@ function roundToLargestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToNearestInteger(number) {
+  return Math.round(number);
 }
 
 /**
@@ -561,8 +559,8 @@ function roundToNearestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
+function getIntegerPartNumber(number) {
+  return Math.trunc(number);
 }
 
 /**
@@ -611,8 +609,18 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  */
 function getRandomInteger(/* min, max */) {
   throw new Error('Not implemented');
+  /*   const length = max - min;
+  let newMin = min;
+  console.log(length);
+  const arrN = [];
+  for (let i = 0; i <= length; i + 1) {
+    console.log(i);
+    arrN.push(min);
+    newMin += newMin;
+  }
+  return arrN; */
 }
-
+// console.log(getRandomInteger(-1, 1));
 /**
  * Returns the length of the hypotenuse of a right triangle.
  *
@@ -623,7 +631,7 @@ function getRandomInteger(/* min, max */) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
+function getHypotenuse(a, b) {
   throw new Error('Not implemented');
 }
 
